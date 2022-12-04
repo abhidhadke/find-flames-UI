@@ -31,6 +31,7 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: pages[currentIndex],
       backgroundColor: Colors.transparent,
       bottomNavigationBar: _bottomNaviBar(),

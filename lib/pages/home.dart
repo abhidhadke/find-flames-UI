@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: _appBar(),
       body: Padding(
@@ -104,35 +105,34 @@ class _HomePageState extends State<HomePage> {
     );
   }
   _chat(){
-    return Center(
-      child: SingleChildScrollView(
-        child: Column(
-          children: const <Widget>[
-            Chat(src: 'assets/chat/Jordan.png',
-              label: 'Jordan',
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Column(
+        children: const <Widget>[
+          Chat(src: 'assets/chat/Jordan.png',
+            label: 'Jordan',
+            chat: 'Hii!',
+            isTyping: false,
+            isVerified: true,
+            isRead: false,
+            message: '1',),
+          SizedBox(height: 14,),
+          Chat(src: 'assets/chat/Tim.png',
+              label: 'Tim',
               chat: 'Hii!',
               isTyping: false,
               isVerified: true,
-              isRead: false,
-              message: '1',),
-            SizedBox(height: 14,),
-            Chat(src: 'assets/chat/Tim.png',
-                label: 'Tim',
-                chat: 'Hii!',
-                isTyping: false,
-                isVerified: true,
-                isRead: true),
-            SizedBox(height: 14,),
-            Chat(src: 'assets/chat/James.png',
-              label: 'James',
-              chat: 'Hi!!',
-              isTyping: true,
-              isVerified: false,
-              isRead: false,
-              message: '9+',),
-            SizedBox(height: 14,),
-          ]
-        ),
+              isRead: true),
+          SizedBox(height: 14,),
+          Chat(src: 'assets/chat/James.png',
+            label: 'James',
+            chat: 'Hi!!',
+            isTyping: true,
+            isVerified: false,
+            isRead: false,
+            message: '9+',),
+          SizedBox(height: 14,),
+        ]
       ),
     );
   }
